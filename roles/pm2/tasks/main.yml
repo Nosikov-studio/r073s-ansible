@@ -15,7 +15,7 @@
 
 #---------------------------------------------------------2
     - name: Start Express server with pm2
-      ansible.builtin.shell: pm2 start index.js --name websocket --watch
+      ansible.builtin.shell: pm2 start index.js --name backend --watch
       args:
         chdir: /var/www/ws/
 
