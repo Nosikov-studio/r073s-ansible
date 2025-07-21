@@ -17,27 +17,27 @@
     - name: Start Express server with pm2
       ansible.builtin.shell: pm2 start server.js --name websocket --watch
       args:
-        chdir: /var/www/ws/server/
+        chdir: /var/www/ws/
 
 
     - name: Start Express server with nohup
       ansible.builtin.shell: nohup node server.js > output.log 2>&1 &
       args:
-        chdir: /var/www/ws/server/
+        chdir: /var/www/ws/
 
 
 
     - name: pm2 save
       ansible.builtin.shell: pm2 save
       args:
-        chdir: /var/www/ws/server/
+        chdir: /var/www/ws/
 
     - name: pm2 startup
       ansible.builtin.shell: pm2 startup
       args:
-        chdir: /var/www/ws/server/
+        chdir: /var/www/ws/
 
     - name: reboot
       ansible.builtin.shell: pm2 startup
       args:
-        chdir: /var/www/ws/server/
+        chdir: /var/www/ws/
