@@ -49,8 +49,8 @@
         insertafter: '^listen 80;'
         line: 'return 301 https://truruki.ru$request_uri;'
 
-    - name: Reload nginx
-      service:
-        name: nginx
-        state: reloaded
+    # - name: Reload nginx
+    #   service:
+    #     name: nginx
+    #     state: reloaded
 
