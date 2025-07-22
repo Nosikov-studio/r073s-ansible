@@ -3,11 +3,13 @@ listen 443 ssl;
 listen [::]:443 ssl;
 ssl_certificate /etc/letsencrypt/live/truruki.ru/fullchain.pem;
 ssl_certificate_key /etc/letsencrypt/live/truruki.ru/privkey.pem;
+ssl_protocols TLSv1.2 TLSv1.3;
+ssl_ecdh_curve auto;
 server_name truruki.ru www.truruki.ru;
-root /var/www/trur;
-index index.php index.html index.htm index.nginx-debian.html;
+root /var/www/ws;
+#index index.php index.html index.htm index.nginx-debian.html;
 location / {
-          proxy_pass http://localhost:40444/;
+          proxy_pass http://localhost:30333/;
           proxy_http_version 1.1;  
           proxy_set_header Upgrade $http_upgrade;  
           proxy_set_header Connection 'upgrade';  
